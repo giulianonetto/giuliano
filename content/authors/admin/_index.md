@@ -4,18 +4,19 @@ authors:
 bio: My research interests include statistical modeling and genomics.
 education:
   courses:
-  - course: Micromasters in Statistics and Data Science
-    institution: MIT
+  - course: "[Micromasters](https://micromasters.mit.edu/ds/) in Statistics and Data Science"
+    institution: MIT/EdX
     year: 2020
   - course: Pharmacy degree
     institution: Federal University of Rio Grande do Sul
     year: 2019
 email: "cruz.gnf@gmail.com"
 interests:
-- Bayesian data analysis
+- Genomics
+- Bayesian methods
+- NGS
 - Microbiome
 - Immunology
-- Next-generation sequencing
 organizations:
 - name: BiomeHub
   url: "https://en.biome-hub.com/"
@@ -40,6 +41,4 @@ user_groups:
 - Visitors
 ---
 
-Bioinformatician trained as a Pharmacist. Data science experience includes predictive modeling, Bayesian analysis, data visualization, and genomics. I have mostly worked with microbiome and gene expression data, but also with scanning electron microscopy and other types of data. I have worked with web development and dynamical reporting routines applied to scientific problems, for both research and production. I have teaching experience in the fields of basic and clinical Immunology as well as intro data science and statistics.
-
-I am passionate about human health and disease, statistical modeling, and the everyday's [chimarrão](https://en.wikipedia.org/wiki/Mat%C3%A9_(drink)).
+Bioinformatician originally trained as a Pharmacist. I believe in health data science as the intersection between methodological rigorousness, health [care & caring](https://doi.org/10.3747/co.21.2239), and communication literacy. I am passionate about statistical modeling, human health and disease, and every day's [chimarrão](https://en.wikipedia.org/wiki/Mat%C3%A9_(drink)). 
