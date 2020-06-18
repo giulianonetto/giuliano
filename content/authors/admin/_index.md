@@ -1,43 +1,40 @@
 ---
 authors:
 - admin
-bio: My research interests include distributed robotics, mobile computing and programmable
-  matter.
+bio: My research interests include statistical modeling and genomics.
 education:
   courses:
-  - course: PhD in Artificial Intelligence
-    institution: Stanford University
-    year: 2012
-  - course: MEng in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2009
-  - course: BSc in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2008
-email: ""
+  - course: Micromasters in Statistics and Data Science
+    institution: MIT
+    year: 2020
+  - course: Pharmacy degree
+    institution: Federal University of Rio Grande do Sul
+    year: 2019
+email: "cruz.gnf@gmail.com"
 interests:
-- Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
+- Bayesian data analysis
+- Microbiome
+- Immunology
+- Next-generation sequencing
 organizations:
-- name: Stanford University
-  url: ""
-role: Professor of Artificial Intelligence
+- name: BiomeHub
+  url: "https://en.biome-hub.com/"
+role: Bioinformatics Scientist
 social:
 - icon: envelope
   icon_pack: fas
   link: '#contact'
 - icon: twitter
   icon_pack: fab
-  link: https://twitter.com/GeorgeCushen
+  link: https://twitter.com/giulianonetto
 - icon: google-scholar
   icon_pack: ai
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+  link: https://scholar.google.com/citations?user=ZJKaC14AAAAJ&hl=en
 - icon: github
   icon_pack: fab
-  link: https://github.com/gcushen
+  link: https://github.com/giulianonetto
 superuser: true
-title: Nelson Bighetti
+title: Giuliano Netto Flores Cruz
 user_groups:
 - Researchers
 - Visitors
