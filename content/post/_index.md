@@ -2,7 +2,7 @@
 header:
   caption: ""
   image: ""
-title: The Sharing of Learning
+title: Sharing of Learning
 view: 3
 ---
 

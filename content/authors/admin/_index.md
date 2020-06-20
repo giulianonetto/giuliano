@@ -1,7 +1,7 @@
 ---
 authors:
 - admin
-bio: My research interests include statistical modeling and genomics.
+bio: Health Data Science & Sharing of Learning.
 education:
   courses:
   - course: "[Micromasters](https://micromasters.mit.edu/ds/) in Statistics and Data Science"

@@ -34,3 +34,8 @@
     name = "Download CV"
     url = "files/cv.pdf"
     weight = 70
+
+  [[main]]
+    name = "<i class='fa fa-code'></i>"
+    url = "https://github.com/giulianonetto/giuliano"
+    weight = 80
