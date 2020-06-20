@@ -1,6 +1,8 @@
 # giuliano
 
-<base target="_blank">
+<head>
+  <base target="_blank"> 
+</head>
 
 This is the code for [Giuliano's personal website](https://giulianonetto.netlify.app/).
 
