@@ -4,6 +4,9 @@ authors:
 - admin
 - Ana Paula Christoff
 - Luiz Felipe Valter de Oliveira
+author_notes:
+- Equal contribution
+- Equal contribution
 date: "2019-04-07T00:00:00Z"
 doi: "https://doi.org/10.1101/2020.02.03.932301"
 featured: true
