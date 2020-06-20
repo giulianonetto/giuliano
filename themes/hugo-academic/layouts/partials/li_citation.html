@@ -14,6 +14,9 @@
   {{ else if .Params.publication }}
   {{- .Params.publication | markdownify -}}.
   {{ end }}
+  {{ if .Params.DOI }}
+  <a href={{ .Params.DOI }} style="font-size: 0.7rem" target="_blank">{{ .Params.DOI }}</a>
+  {{ end }}
   <p>{{ partial "page_links" (dict "page" . "is_list" 1) }}</p>
 
   {{/* MLA Style */}}

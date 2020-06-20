@@ -23,6 +23,7 @@
           {{ i18n "last_updated" }}
       {{ end }}
     {{ end }}
+    <b>{{ $page.Params.publication | markdownify }}</b>
     {{ $date }}
   </span>
   {{ end }}
