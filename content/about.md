@@ -1,11 +1,15 @@
 ---
-description: What is Hugo?
+description: ""
 title: About
 ---
 
-Hugo is a fast and modern static site generator written in Go, and designed to make website creation fun again.
-Hugo is a general-purpose website framework. Technically speaking, Hugo is a static site generator. Unlike systems that dynamically build a page with each visitor request, Hugo builds pages when you create or update your content. Since websites are viewed far more often than they are edited, Hugo is designed to provide an optimal viewing experience for your website’s end users and an ideal writing experience for website authors.
 
-Websites built with Hugo are extremely fast and secure. Hugo sites can be hosted anywhere, including Netlify, Heroku, GoDaddy, DreamHost, GitHub Pages, GitLab Pages, Surge, Aerobatic, Firebase, Google Cloud Storage, Amazon S3, Rackspace, Azure, and CloudFront and work well with CDNs. Hugo sites run without the need for a database or dependencies on expensive runtimes like Ruby, Python, or PHP.
+My name is Giuliano, and I am a Brazilian Bioinformatician who loves stats and stories. I graduated as a Pharmacist from the [Federal University of Rio Grande do Sul (UFRGS)](ufrgs.br) in 2019. I spent most of my undergrad studying Immunology & Microbiology. In 2018, one year after starting exploring the field of bioinformatics, I was accepted as an intern at [Neoprospecta Microbiome Technologies](https://www.neoprospecta.com/). I was focused on microbiome data analysis applied to tracking down microorganisms in food industries, hospital environments, and the random sort of possible scenarios. 
 
-We think of Hugo as the ideal website creation tool with nearly instant build times, able to rebuild whenever a change is made.
+After graduation, I became "formally" a bioinformatician, thanks to the great working environment at "Neo" and to the mentoring from many great people. Beyond data analysis, we were responsible for creating, maintining and operating analytical pipelines and web applications, mostly based on python and [Django](https://www.djangoproject.com/). 
+
+Around the middle of 2019, I became a Bioinformatician at [BiomeHub](https://www.biome-hub.com/), Neoprospecta's sister focused on health care. My research would now be focused on developing statistical models to estimate bacterial colony-forming units from NGS data. As you might know, NGS is thought to yield [relative information only](https://academic.oup.com/bioinformatics/article/34/16/2870/4956011). It would be nice, however, to be able to tell the difference between two samples with 50% of Klebsiella pneumoniae, if one has $10^2$ CFU while the other one has, say, $10^5$ CFU. This was our most recent research task (besides all COVID-19 stuff, of course). Our results are currently [available on bioRxiv](https://www.biorxiv.org/content/10.1101/2020.02.03.932301v2), in case you are interested. 
+
+This is just to summarise my short academic life so far. As I was working my way through it, I also learned a lot. I am particularly interested in statistical modeling of human health data. It might be microbiome, gene expression, image data, or anything related to human health! 
+
+I consider myself a bioinformatician, but I never have left my Pharmacy background behind. As I move forward, my ultimate goal is to better integrate mathematical modeling with health [care & caring](). This means not only complex mathematics, data and coding, but even more complex aspects of the Health Sciences. At the end of the day, decision making is to be made at the clinic, and that is the very place where I dream my science will make an impact one day.
