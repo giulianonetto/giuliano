@@ -8,7 +8,7 @@ education:
     institution: MIT/EdX
     year: 2020
   - course: Pharmacy degree
-    institution: Federal University of Rio Grande do Sul
+    institution: Universidade Federal do Rio Grande do Sul (UFRGS)
     year: 2019
 email: "cruz.gnf@gmail.com"
 interests:
@@ -20,7 +20,7 @@ interests:
 organizations:
 - name: BiomeHub
   url: "https://en.biome-hub.com/"
-role: Bioinformatics Scientist
+role: Bioinformatician
 social:
 - icon: envelope
   icon_pack: fas
