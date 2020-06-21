@@ -13,3 +13,4 @@ Around the middle of 2019, I became a Bioinformatician at [BiomeHub](https://www
 This is just to summarise my short academic life so far. As I was working my way through it, I also learned a lot. I am particularly interested in statistical modeling of human health data. It might be microbiome, gene expression, image data, or anything related to human health! 
 
 I consider myself a Bioinformatician, as you have noticed, but I never left my Pharmacy background behind. As I move forward, my ultimate goal is to better integrate mathematical modeling with health [care & caring](https://doi.org/10.3747/co.21.2239). This means not only complex mathematics, data and coding, but even more complex aspects of the Health Sciences. At the end of the day, decision making is to be made at the clinic, and that is the very place where I dream my science will make an impact one day.
+
