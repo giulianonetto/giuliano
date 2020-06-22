@@ -3,7 +3,7 @@ header:
   caption: ""
   image: ""
 title: Publications
-view: 2
+view: 4
 ---
 
 <a href="https://scholar.google.com/citations?user=ZJKaC14AAAAJ&hl=en" target="_blank"><i class="ai ai-google-scholar ai-2x"></i></a> 
