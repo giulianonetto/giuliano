@@ -41,4 +41,4 @@ user_groups:
 - Visitors
 ---
 
-Bioinformatician originally trained as a Pharmacist. I believe in health data science as the intersection between analytical rigor, health [care & caring](https://doi.org/10.3747/co.21.2239), and communication literacy. I am passionate about statistical modeling, human health and disease, and every day's [chimarrão](https://en.wikipedia.org/wiki/Mat%C3%A9_(drink)). 
+Bioinformatician originally trained as a Pharmacist. I believe in health data science as the intersection between analytical rigor, health [care & caring](https://doi.org/10.3747/co.21.2239), and communication literacy. I am passionate about statistical modeling, human health and disease, and everyday's [chimarrão](https://en.wikipedia.org/wiki/Mat%C3%A9_(drink)). 
