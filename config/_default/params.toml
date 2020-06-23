@@ -115,7 +115,7 @@ contact_links = [
   {icon = "twitter", icon_pack = "fab", name = "Twitter", link = "https://twitter.com/giulianonetto"},
   {icon = "github", icon_pack = "fab", name = "Github", link = "https://github.com/giulianonetto"},
   {icon = "google-scholar", icon_pack = "ai", name = "Google Scholar", link = "https://scholar.google.com/citations?user=ZJKaC14AAAAJ&hl=en"},
-  {icon = "linkedin", icon_pack = "fab", name = "Linkedin", link = "https://www.linkedin.com/in/giuliano-netto-flores-cruz-90089b46/"},
+  {icon = "linkedin", icon_pack = "fab", name = "Linkedin", link = "https://www.linkedin.com/in/giulianonetto"},
   ]
 
 ############################
