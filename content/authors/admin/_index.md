@@ -4,23 +4,22 @@ authors:
 bio: Health Data Science & Sharing of Learning.
 education:
   courses:
-  - course: "[Micromasters](https://micromasters.mit.edu/ds/) in Statistics and Data Science"
-    institution: MIT/EdX
-    year: 2020
-  - course: Pharmacy degree
+  - course: MSc in Bioinformatics
+    institution: The University of British Columbia (UBC)
+    year: 2023
+  - course: Title of Pharmacist
     institution: Universidade Federal do Rio Grande do Sul (UFRGS)
     year: 2019
-email: "cruz.gnf@gmail.com"
+email: "cruz dot gnf at gmail dot com"
 interests:
+- Clinical prediction models
 - Genomics
-- Bayesian methods
-- NGS
-- Microbiome
-- Immunology
+- Bayesian modeling
+- Diagnosis and Prognosis
 organizations:
-- name: BiomeHub
-  url: "https://en.biome-hub.com/"
-role: Bioinformatician
+- name: University of British Columbia
+  url: https://www.ubc.ca/
+role: ""
 social:
 - icon: envelope
   icon_pack: fas
@@ -41,4 +40,4 @@ user_groups:
 - Visitors
 ---
 
-Bioinformatician from south of Brazil originally trained as a Pharmacist. I believe in health data science as the intersection between analytical rigor, health [care & caring](https://doi.org/10.3747/co.21.2239), and communication literacy. I am passionate about statistical modeling, human health and disease, and everyday [chimarrão](https://en.wikipedia.org/wiki/Mat%C3%A9_(drink)). 
+Hi! I'm Giuliano, a Pharmacist Bioinformatician from the South of Brazil. Currently, I'm a master's student in [Dr. Keegan Korthauer's lab](https://kkorthauer.org/) at the [University of British Columbia](https://www.ubc.ca/). I am passionate about statistical modeling, human health and disease, and everyday [chimarrão](https://en.wikipedia.org/wiki/Mat%C3%A9_(drink)). As a researcher, I am particularly interested in answering the following question: **how can we navigate through the omics world and deliver reliable and deployable clinical prediction models?** Hopefully, using cool statistical modeling and rigorous epidemiological designs, we can ultimately aid diagnosing, prognosing, and treating life-threatening diseases.
