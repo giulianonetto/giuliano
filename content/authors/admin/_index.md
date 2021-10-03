@@ -10,7 +10,7 @@ education:
   - course: Title of Pharmacist
     institution: Universidade Federal do Rio Grande do Sul (UFRGS)
     year: 2019
-email: "cruz dot gnf at gmail dot com"
+email: "cruz.gnf@gmail.com"
 interests:
 - Clinical prediction models
 - Genomics
@@ -40,4 +40,4 @@ user_groups:
 - Visitors
 ---
 
-Hi! I'm Giuliano, a Pharmacist Bioinformatician from the South of Brazil. Currently, I'm a master's student in [Dr. Keegan Korthauer's lab](https://kkorthauer.org/) at the [University of British Columbia](https://www.ubc.ca/). I am passionate about statistical modeling, human health and disease, and everyday [chimarrão](https://en.wikipedia.org/wiki/Mat%C3%A9_(drink)). As a researcher, I am particularly interested in answering the following question: **how can we navigate through the omics world and deliver reliable and deployable clinical prediction models?** Hopefully, using cool statistical modeling and rigorous epidemiological designs, we can ultimately aid diagnosing, prognosing, and treating life-threatening diseases.
+Hi! I'm Giuliano, a Pharmacist Bioinformatician from the South of Brazil. Currently, I'm a master's student in [Dr. Keegan Korthauer's lab](https://kkorthauer.org/) at the [University of British Columbia](https://www.ubc.ca/). As a researcher, I am particularly interested in answering the following question: **how can we navigate the omics universe to deliver reliable and deployable clinical prediction models?** Hopefully, using cool statistical modeling and rigorous epidemiological designs, we can ultimately aid diagnosing, prognosing, and treating life-threatening diseases.
