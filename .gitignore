@@ -41,3 +41,7 @@ vignettes/*.pdf
 .idea/
 
 public/
+
+
+# Docker stuff
+.local/
