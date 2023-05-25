@@ -4,6 +4,9 @@ authors:
 bio: Health Data Science & Sharing of Learning.
 education:
   courses:
+  - course: PhD in Statistics (incoming)
+    institution: The University of British Columbia (UBC)
+    year: 2027
   - course: MSc in Bioinformatics
     institution: The University of British Columbia (UBC)
     year: 2023
@@ -14,10 +17,10 @@ email: "cruz.gnf@gmail.com"
 interests:
 - Clinical prediction models
 - Genomics
-- Bayesian modeling
-- Diagnosis and Prognosis
+- Bayesian statistics
+- Decision analysis
 organizations:
-- name: University of British Columbia
+- name: The University of British Columbia
   url: https://www.ubc.ca/
 role: ""
 social:
