@@ -4,7 +4,7 @@ authors:
 bio: Health Data Science & Sharing of Learning.
 education:
   courses:
-  - course: PhD in Statistics (incoming)
+  - course: PhD in Statistics
     institution: The University of British Columbia (UBC)
     year: 2027
   - course: MSc in Bioinformatics
