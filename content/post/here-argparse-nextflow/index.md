@@ -25,7 +25,7 @@ projects: []
 Reproducibility and pipeline management take time. When we're actually *doing* data analysis, though, we just want to focus on the analysis at hand, not the engineering overhead wrapped around it. In R, a simple trick that combines two small packages, [`argparse`](https://cran.r-project.org/package=argparse) and [`here`](https://here.r-lib.org/), lets us write code exactly the way we would in any interactive session, while still plugging straight into the reproducibility power of [Nextflow](https://www.nextflow.io/).
 
 {{% alert note %}}
-The trick is to set our `argparse` defaults with `here::here()`.
+The trick is to set `argparse` defaults with relative paths + `here::here()`.
 {{% /alert %}}
 
 ```r
