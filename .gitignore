@@ -45,3 +45,6 @@ public/
 
 # Docker stuff
 .local/
+
+# macOS
+.DS_Store
