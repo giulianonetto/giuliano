@@ -1,5 +1,5 @@
 ---
-title: "Keep your RStudio workflow, get Nextflow's reproducibility"
+title: "{here} and {argparse} bridge interactive analysis in R and Nextflow pipelines"
 subtitle: ""
 summary: "One small habit, argparse defaults set with here::here(), lets the same R script run interactively in your console and as a Nextflow process, with no rewrite in between."
 authors:
