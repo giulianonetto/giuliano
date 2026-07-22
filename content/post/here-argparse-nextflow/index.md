@@ -75,8 +75,6 @@ A complete pipeline is then just a `main.nf` that wires an input file to the scr
 params.input_data = "data/data.tsv"
 
 process ANALYZE {
-    publishDir "results", mode: "copy"
-
     input:
     path input_data
 
@@ -94,7 +92,7 @@ workflow {
 }
 ```
 
-We run it with `nextflow run main.nf`. Now the process calls the same script, but passes the staged input **explicitly**. That `--input_data` value overrides the default, so `here::here()` is never consulted at runtime, which is exactly what we want, because inside a process the script runs in Nextflow's task work directory, where `here::here()` would point somewhere meaningless. The default only ever matters while we develop.
+We run it with `nextflow run main.nf`. The process calls the same script, but passes the staged input **explicitly**. That `--input_data` value overrides the default, so `here::here()` is never consulted at runtime, which is exactly what we want, because inside a process the script runs in Nextflow's task work directory, where `here::here()` would point somewhere meaningless. The default only ever matters while we develop.
 
 ## The payoff
 
