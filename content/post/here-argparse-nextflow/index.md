@@ -21,7 +21,6 @@ image:
   preview_only: false
 projects: []
 ---
-
 Reproducibility and pipeline management take time. When we're actually *doing* data analysis, though, we just want to focus on the analysis at hand, not the engineering overhead wrapped around it. In R, a simple trick that combines two small packages, [`argparse`](https://cran.r-project.org/package=argparse) and [`here`](https://here.r-lib.org/), lets us write code exactly the way we would in any interactive session, while still plugging straight into the reproducibility power of [Nextflow](https://www.nextflow.io/).
 
 {{% alert note %}}
@@ -47,11 +46,11 @@ data |>
   write_tsv(args$output)
 ```
 
-That's the whole idea. When we source or run this in the console, `parse_args()` sees no command-line arguments, so every option falls back to its default. Because the defaults are `here::here()` paths, they resolve relative to the **project root**, so `read_tsv(args$input_data)` just finds `data/data.tsv`, exactly as if we'd hard-coded it. Our normal develop-in-place loop is untouched. We point the output default at `tmp/`, which we `.gitignore`: throwaway results while we iterate, and nothing accidentally committed.
+When we source or manually run this in the R console, the default paths in `parse_args()`resolve relative to the **project root**, so `read_tsv(args$input_data)` just finds `<project-root>/data/data.tsv`. We point the default output to `<project-root>/tmp/` (which we'd ideally `.gitignore`) to throw away results while we iterate in a normal interactive data analysis workflow.
 
-Without `here::here()`, the default would evaluate to `data/data.tsv` at runtime, which would only work if our current working directory in R matches the project root. Thus, explicitly anchoring the default to the project root keeps each path stable while working interactively.
+Without `here::here()`, the default would evaluate to `data/data.tsv` at runtime, which would only work if our current working directory in the R console matches the project root. Thus, explicitly anchoring the default to the project root keeps each path stable while working interactively. This kind of certainty is a key motivation behind the [`{here}`]([here.r-lib.org](https://here.r-lib.org)) R package.
 
-To turn the script into a pipeline step, we add the shebang line already visible at the top, make it executable, and drop it in the pipeline's `bin/` folder:
+To use the script in a Nextflow pipeline, we make the script file executable and drop it in the pipeline's `bin/` folder:
 
 ```bash
 chmod +x bin/analyze.R
