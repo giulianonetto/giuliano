@@ -10,7 +10,7 @@ tags:
 - Reproducibility
 - Bioinformatics
 categories:
-- Bioinformatic software engineering
+- Bioinformatics software engineering
 date: "2026-07-22T00:00:00Z"
 lastmod: "2026-07-22T00:00:00Z"
 featured: false
