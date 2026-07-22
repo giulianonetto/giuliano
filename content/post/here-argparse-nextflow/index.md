@@ -49,6 +49,8 @@ data |>
 
 That's the whole idea. When we source or run this in the console, `parse_args()` sees no command-line arguments, so every option falls back to its default. Because the defaults are `here::here()` paths, they resolve relative to the **project root**, so `read_tsv(args$input_data)` just finds `data/data.tsv`, exactly as if we'd hard-coded it. Our normal develop-in-place loop is untouched. We point the output default at `tmp/`, which we `.gitignore`: throwaway results while we iterate, and nothing accidentally committed.
 
+Without `here::here()`, the default would evaluate to `data/data.tsv` at runtime, which would only work if our current working directory in R matches the project root. Thus, explicitly anchoring the default to the project root keeps each path stable while working interactively.
+
 To turn the script into a pipeline step, we add the shebang line already visible at the top, make it executable, and drop it in the pipeline's `bin/` folder:
 
 ```bash
