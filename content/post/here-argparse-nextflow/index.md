@@ -1,7 +1,7 @@
 ---
-title: "{here} and {argparse} bridge interactive analysis in R and Nextflow pipelines"
+title: "Integrating interactive data analysis in R with Nextflow pipelines"
 subtitle: ""
-summary: "One small habit, argparse defaults set with here::here(), lets the same R script run interactively in the console and as a Nextflow process, with no rewrite in between."
+summary: "A simple workflow for leveraging the power of Nextflow pipelines while still keeping your data analysis in R easily interactive."
 authors:
 - admin
 tags:
@@ -21,53 +21,44 @@ image:
   preview_only: false
 projects: []
 ---
-Reproducibility and pipeline management take time. When we're actually *doing* data analysis, though, we just want to focus on the analysis at hand, not the engineering overhead wrapped around it. In R, a simple trick that combines two small packages, [`argparse`](https://cran.r-project.org/package=argparse) and [`here`](https://here.r-lib.org/), lets us write code exactly the way we would in any interactive session, while still plugging straight into the reproducibility power of [Nextflow](https://www.nextflow.io/).
 
-{{% alert note %}}
-The trick is to set `argparse` defaults with relative paths + `here::here()`.
-{{% /alert %}}
+Most data analysis in R is done interactively. At some point, you may want this analysis to run as a reproducible [Nextflow](https://www.nextflow.io/) pipeline. You carefully craft a structured script (e.g., with no hard-coded paths). By then, your code is reproducible, but often not so interactive anymore (e.g., lots of command-line options floating around). Iterating between Nextflow runs and analysis development becomes a bit of a headache. Here is a quick recipe to make your data analysis in R ready for Nextflow, while still supporting your regular interactive workflow.
+
+## The analysis script
+
+We write the script the way we always would, and give it a small command-line interface with [`argparse`](https://cran.r-project.org/package=argparse). The one detail worth adding is to set each argument's default with [`here::here()`](https://here.r-lib.org/), so the default paths always resolve from the project root.
 
 ```r
 #!/usr/bin/env Rscript
-
+library(tidyverse)
 library(argparse)
 library(here)
-library(readr)
 
 parser <- ArgumentParser()
 parser$add_argument("--input_data", default = here::here("data/data.tsv"))
-parser$add_argument("--output",     default = here::here("tmp/counts.tsv"))
+parser$add_argument("--output_dir", default = here::here("tmp"))
 args <- parser$parse_args()
+
+dir.create(args$output_dir, showWarnings = FALSE, recursive = TRUE)
 
 data <- read_tsv(args$input_data)
 
-data |>
-  dplyr::count(group) |>
-  write_tsv(args$output)
+data %>%
+  dplyr::count(group) %>%
+  write_tsv(file.path(args$output_dir, "counts.tsv"))
 ```
 
-When we source or manually run this in the R console, the default paths in `parse_args()`resolve relative to the **project root**, so `read_tsv(args$input_data)` just finds `<project-root>/data/data.tsv`. We point the default output to `<project-root>/tmp/` (which we'd ideally `.gitignore`) to throw away results while we iterate in a normal interactive data analysis workflow.
+Run this in the R console and `parse_args()` sees no command-line arguments, so every option falls back to its default.
 
-Without `here::here()`, the default would evaluate to `data/data.tsv` at runtime, which would only work if our current working directory in the R console matches the project root. Thus, explicitly anchoring the default to the project root keeps each path stable while working interactively. This kind of certainty is a key motivation behind the [`{here}`]([here.r-lib.org](https://here.r-lib.org)) R package.
+Because the defaults use `here::here()`, they resolve from the project root regardless of our current working directory, so `read_tsv(args$input_data)` just finds `<project-root>/data/data.tsv`. We also point the outputs to a temporary directory (`<project-root>/tmp/`) by default, as the final outputs will be created reproducibly in Nextflow later.
 
-To use the script in a Nextflow pipeline, we make the script file executable and drop it in the pipeline's `bin/` folder:
+Without `here::here()`, the default would evaluate to `<working-directory>/data/data.tsv` at runtime, which would only work if our working directory in R happened to match the project root. Anchoring to the project root explicitly keeps each path stable.
 
-```bash
-chmod +x bin/analyze.R
-```
+Our interactive data analysis workflow is then untouched: we can continue analyzing data using the above script as usual.
 
-Nextflow automatically puts `bin/` on the `PATH`, so the script is callable by name from any process. The whole project stays small:
+## The Nextflow pipeline
 
-```
-.
-├── main.nf
-├── bin/
-│   └── analyze.R
-└── data/
-    └── data.tsv
-```
-
-A complete pipeline is then just a `main.nf` that wires an input file to the script:
+A minimal Nextflow pipeline that runs this one step is a single `main.nf`:
 
 ```groovy
 // main.nf
@@ -82,7 +73,7 @@ process ANALYZE {
 
     script:
     """
-    analyze.R --input_data ${input_data} --output counts.tsv
+    analyze.R --input_data ${input_data} --output_dir "."
     """
 }
 
@@ -91,12 +82,27 @@ workflow {
 }
 ```
 
-We run it with `nextflow run main.nf`. The process calls the same script, but passes the staged input **explicitly**. That `--input_data` value overrides the default, so `here::here()` is never consulted at runtime, which is exactly what we want, because inside a process the script runs in Nextflow's task work directory, where `here::here()` would point somewhere meaningless. The default only ever matters while we develop.
+The process calls `analyze.R` and passes the input and output paths explicitly on the command line.
 
-## The payoff
+## Putting the script in the pipeline
 
-So the argparse default is the seam. `here::here()` makes the dev-time default project-relative and reproducible; Nextflow supplies the real path when it actually matters. In exchange we get the things pipelines are genuinely good at: provenance through git, isolation through containers, and `-resume` so we're not recomputing finished steps.
+For Nextflow to find the script, we add the shebang line (`#!/usr/bin/env Rscript`, already at the top of the R script above), make it executable, and drop it in the pipeline's `bin/` folder:
 
-There are heavier options for R-native reproducibility. [`{targets}`](https://docs.ropensci.org/targets/) builds a proper dependency graph, and we can [render Rmarkdown reports straight from a process](https://www.solshenker.com/rmarkdown-nextflow-process/). But the nice part is that this one asks almost nothing of us: write the script the way we always would, and add one sensible default per argument.
+```bash
+chmod +x bin/analyze.R # make it executable
+```
 
-If something here doesn't hold up, we'd love to hear about it.
+Nextflow automatically puts `bin/` on the `PATH`, so the process can call `analyze.R` by name. The whole project now looks like the following:
+
+```
+.
+├── main.nf
+├── bin/
+│   └── analyze.R
+└── data/
+    └── data.tsv
+```
+
+We run it with `nextflow run main.nf`. Now the same script runs inside the pipeline, except Nextflow passes the input and output paths explicitly (`--input_data` and `--output_dir`), overriding the `here::here()` defaults. Nothing in the script changed: the defaults serve our interactive session, and Nextflow supplies the real paths at runtime.
+
+That is the whole integration. We keep writing data analysis code exactly as before while leveraging the power of Nextflow.
