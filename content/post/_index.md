@@ -41,9 +41,3 @@ function myFunction() {
 }
 
 </script>
-
-<br><br>
-
-{{% alert note %}}
- Under construction.
-{{% /alert %}}
